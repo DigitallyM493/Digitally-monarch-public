@@ -1,0 +1,53 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Common panel styles */
+.panel {
+    display: none; /* Hide panels by default */
+    opacity: 0; /* Initial opacity */
+    transition: opacity 0.5s ease; /* Transition for opacity */
+    transform: translateY(20px); /* Start position for slide effect */
+}
+
+/* Show the panel when active */
+.panel.active {
+    display: block; /* Display block to allow visibility */
+    opacity: 1; /* Full opacity */
+    transform: translateY(0); /* Move to original position */
+    animation: slideIn 0.5s ease forwards; /* Slide-in animation */
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0; /* Start transparent */
+        transform: translateY(20px); /* Start below */
+    }
+    to {
+        opacity: 1; /* End fully visible */
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+/* Ellipse styles */
+.ellipse {
+    width: 50px; /* Adjust size */
+    height: 50px; /* Adjust size */
+    border-radius: 50%; /* Make it circular */
+    background-color: blue; /* Color of the ellipse */
+    position: relative; /* Allow positioning */
+    transition: transform 0.5s ease; /* Transition for movement */
+}
+
+/* Positioning for Desktop 2 */
+.desktop2 .ellipse {
+    top: 50px; /* Initial position for Ellipse 6 */
+}
+
+/* Positioning for Desktop 3 */
+.desktop3 .ellipse {
+    top: 150px; /* Position for Ellipse 12 */
+}
